@@ -69,7 +69,7 @@
     <div class="page-header">
 
 
-        <form action="/chart/" method="post">
+        <form method="post">
 
             <div class="row">
                 <div class="col-md-3 col-md-offset-1">
@@ -78,7 +78,7 @@
                    <span class="input-group-addon" id="sizing-addon1">
                        <span class="glyphicon glyphicon-th-list"></span>
                    </span>
-                        <input autocomplete="off" list="catelist" type="text" name="filter1" class="form-control" placeholder="类型选择" aria-describedby="basic-addon1">
+                        <input autocomplete="off" list="catelist" type="text" name="cate" class="form-control" placeholder="类型选择" aria-describedby="basic-addon1">
                         <datalist id="catelist">
                             {%for each in pricesum_by_cate%}
                             <option value="{{each.cate}}">
@@ -94,7 +94,7 @@
                    <span class="input-group-addon" id="sizing-addon1">
                        <span class="glyphicon glyphicon-home"></span>
                    </span>
-                        <input autocomplete="off" list="citylist" type="text" name="filter2" class="form-control" placeholder="区域选择" aria-describedby="basic-addon1">
+                        <input autocomplete="off" list="citylist" type="text" name="area" class="form-control" placeholder="区域选择" aria-describedby="basic-addon1">
                         <datalist id="citylist">
 
                             {%for each in pricesum_by_area%}
@@ -111,7 +111,7 @@
                    <span class="input-group-addon" id="sizing-addon1">
                        <span class="glyphicon glyphicon-calendar"></span>
                    </span>
-                        <input autocomplete="off" list="datelist" type="text" name="filter3" class="form-control" placeholder="日期选择" aria-describedby="basic-addon1">
+                        <input autocomplete="off" list="datelist" type="text" name="pubdate" class="form-control" placeholder="日期选择" aria-describedby="basic-addon1">
                         <datalist id="datelist">
 
                             {%for each in countsum_by_date%}
@@ -132,7 +132,7 @@
     </div>
 
 </div>
-<!-- /. ROW  -->
+<!-- /. chartROW1  -->
 
 <div class="row">
     <div class="col-md-7">
@@ -187,7 +187,7 @@ color: '#808080'
 }]
 },
 tooltip: {
-valueSuffix: '°C'
+valueSuffix: '个'
 },
 legend: {
 layout: 'vertical',
@@ -236,7 +236,7 @@ text: '销售额（元）'
 tooltip: {
 headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
     pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-        '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+        '<td style="padding:0"><b>{point.y:.1f} 元</b></td></tr>',
     footerFormat: '</table>',
 shared: true,
 useHTML: true
